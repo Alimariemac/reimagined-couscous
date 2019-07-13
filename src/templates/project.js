@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
+import Layout from "../components/layout"
+
 
 class Project extends Component {
   render(){
@@ -9,10 +11,12 @@ class Project extends Component {
       content
     } = this.props.data.contentfulProject
     return (
+      <Layout>
     <div>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}}/>
       </div>
+      </Layout>
     )
   }
 }

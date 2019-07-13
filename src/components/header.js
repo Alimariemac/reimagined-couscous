@@ -1,42 +1,44 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Container, Row, Col } from 'reactstrap'
+import styled from 'styled-components'
+
+const Marquee = styled.div`
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+`
+const MarqueeH1 = styled.h1`
+display:inline;
+`
+const MarqueeSpan  = styled.span`
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+  @keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+`
+const MarqueeSpan2 = styled(MarqueeSpan) `
+animation-delay: 5s;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <header>
+  <Marquee>
+    <MarqueeSpan>
+      <p>This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text -&nbsp;</p>
+    </MarqueeSpan>
+    <MarqueeSpan2>
+      <p>This is not - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text -&nbsp;</p>
+    </MarqueeSpan2>
+  </Marquee>
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
