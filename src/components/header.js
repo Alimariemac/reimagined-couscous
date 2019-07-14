@@ -9,13 +9,10 @@ const Marquee = styled.div`
   white-space: nowrap;
   overflow: hidden;
 `
-const MarqueeH1 = styled.h1`
-display:inline;
-`
 const MarqueeSpan  = styled.span`
-  margin: 0 auto;
+  /* margin: 0 auto;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; */
   display: inline-block;
   padding-left: 100%;
   animation: marquee 10s linear infinite;
@@ -27,18 +24,31 @@ const MarqueeSpan2 = styled(MarqueeSpan) `
 animation-delay: 5s;
 `
 
+const RelativeDiv = styled.div`
+position: relative;
+height: 8em;
+overflow: hidden;
+@media (max-width: 400px) {
+  height: 4rem;
+}
+`
+
 const Header = ({ siteTitle }) => (
+  //need to space these out and figure out animation timing
   <header>
-  <Marquee>
-    <MarqueeSpan>
-      <p>This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text -&nbsp;</p>
-    </MarqueeSpan>
-    <MarqueeSpan2>
-      <p>This is not - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text - This is text -&nbsp;</p>
-    </MarqueeSpan2>
-  </Marquee>
+  <RelativeDiv>
+      <h1 className = "marquee"><span>Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;  </span></h1>
+      <h1 className = "marquee marquee2"><span className = "MarqueeSpan2">Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;</span></h1>
+ </RelativeDiv>
+ <RelativeDiv>
+     <h1 className = "marquee"><span>Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;  </span></h1>
+     <h1 className = "marquee marquee2"><span className = "MarqueeSpan2">Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;</span></h1>
+</RelativeDiv>
+<RelativeDiv>
+    <h1 className = "marquee"><span>Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;  </span></h1>
+    <h1 className = "marquee marquee2"><span className = "MarqueeSpan2">Welcome Welcome Welcome Welcome Welcome Welcome Welcome -&nbsp;</span></h1>
+</RelativeDiv>
   </header>
 )
-
 
 export default Header

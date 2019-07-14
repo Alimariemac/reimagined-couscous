@@ -12,11 +12,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { GlobalStyle } from '../global-style'
 import styled from 'styled-components'
 
-import Header from "./header"
-//import "./layout.css"
-const Body = styled.div`
 
+import Header from "./header"
+
+const H1 = styled.h1`
+font-family: 'Noto Sans', sans-serif;
+font-size:4.5rem ;
+@media (max-width: 400px) {
+  font-size: 2rem;
 `
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -28,24 +33,25 @@ const Layout = ({ children }) => {
     }
   `)
 
+const Body = styled.div `
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:700|Zilla+Slab&display=swap");
+background-color: #FFF8F8;
+color:#5926E3;
+margin: 0 auto;
+padding-bottom: 1.45rem;
+padding-top: 2rem;
+`
+
   return (
     <>
-    <body>
-      <div
-        style={{
-          margin: `0 auto`,
-          paddingBottom: `1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+    <Body>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
-      </body>
+      </Body>
       <GlobalStyle/>
     </>
 
