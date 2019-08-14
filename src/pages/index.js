@@ -47,11 +47,11 @@ const IndexPage = ({data}) => (
           </RelDiv>
           <Row>
               <Col>
-              <Padded2>
+              <Padded1>
                   <H2>
                   Projects.
                   </H2>
-              </Padded2>
+              </Padded1>
               </Col>
           </Row>
           <Row>

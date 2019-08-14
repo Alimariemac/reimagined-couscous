@@ -220,16 +220,10 @@ padding: 0;
 }
 `
 export const Padded1 = styled.div`
-margin-bottom: 1.25rem;
-@media (min-width:${s}px) {
 margin-bottom: 1.5rem;
-}
 `
 export const Padded2 = styled.div`
-margin-bottom: 1.5rem;
-@media (min-width:${s}px) {
 margin-bottom: 3rem;
-}
 `
 export const Top = styled.div`
 width:100%;
