@@ -4,12 +4,13 @@ import Header from "../components/header.js"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import mainImage from "../images/baugasm3.png"
+import mainImage from "../images/blob.png"
 import styled from "styled-components"
 import { Row, Col} from "reactstrap"
 import { Link } from "gatsby"
 import {leftAlign, StyledLink, ProjectBlock, NumberStyle, MasonryLayout, LayoutPanel, PanelContent, ColorDiv, PlaceholderDiv2, PlaceholderDiv, P, Padded1, Padded2, Container, MainImage, H1, H2, H3, H4, RelDiv, AbsoluteDiv} from "../style.js"
 import Fade from "react-reveal/Fade"
+
 
 const Project = ({node})=>{
   return(
@@ -17,7 +18,8 @@ const Project = ({node})=>{
            <NumberStyle><H3>{node.order}.</H3></NumberStyle>
            <ProjectBlock>
               <H3>{node.title}</H3>
-              <P>{node.companyName}<br/><StyledLink to={node.slug} addCSS = {leftAlign}>see more</StyledLink></P>
+              <P>{node.companyName}<br></br>
+              <StyledLink to={node.slug} addCSS = {leftAlign}>see more</StyledLink></P>
             </ProjectBlock>
     </Col>
   )
@@ -38,6 +40,7 @@ const IndexPage = ({data}) => (
                   <br></br>
                   こんにちわ.</H1>
                   </Padded1>
+                  
                   <Padded2>
                   <P>Stilton cheddar cream cheese. Feta squirty cheese mascarpone st. agur blue cheese who moved my cheese everyone loves cow dolcelatte. Stinking bishop blue castello parmesan port-salut edam rubber cheese airedale stinking bishop.</P>
                   </Padded2>
@@ -45,15 +48,6 @@ const IndexPage = ({data}) => (
               </Col>
               </Row>
           </RelDiv>
-          <Row>
-              <Col>
-              <Padded1>
-                  <H2>
-                  Projects.
-                  </H2>
-              </Padded1>
-              </Col>
-          </Row>
           <Row>
     <Col>
       <Row id = "projectSection">
@@ -76,13 +70,8 @@ export const pageQuery = graphql`
           title
           slug
           order
+          year
           companyName
-          image{
-            description
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-          }
         }
       }
     }

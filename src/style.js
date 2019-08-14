@@ -19,7 +19,7 @@ export const FadeDiv = styled.div`
 `;
 
 export const Body = styled.div`
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Prata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700,Noto+Serif+SC:900&display=swap");
   background-color: #FFFFFF;
   color:#000000;
 `
@@ -28,60 +28,47 @@ font-size: 1rem;
 font-weight: 300;
 font-family: "Lato", sans-serif;
 @media (min-width:${xs}px) {
-  font-size: 1.05rem;
-}
-@media (min-width:${s}px) {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 @media (min-width:${m}px) {
-  font-size: 1.2rem;
-}
-@media (min-width:${l}px) {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 `
-export const IndentP = styled.p`
-font-size: 1rem;
-font-weight: 300;
-font-family: "Lato", sans-serif;
+export const IndentP = styled(P)`
 margin-left: 15px;
-@media (min-width:${xs}px) {
-  font-size: 1.05rem;
-}
-@media (min-width:${s}px) {
-  font-size: 1.1rem;
-}
-@media (min-width:${m}px) {
-  font-size: 1.2rem;
-}
-@media (min-width:${l}px) {
-  font-size: 1.25rem;
-}
+
 `
 export const ListP= styled(IndentP)`
+font-size: 0.75rem;
+@media (min-width:${xs}px) {
+  font-size: 0.8rem;
+}
+@media (min-width:${m}px) {
+  font-size: 0.9rem;
+}
+`
+export const LinkP= styled(P)`
 padding:0px;
 margin-bottom:0;
 `
 export const H1 = styled.h1`
-font-size: 1.7rem;
-font-family: "Prata", serif;
+font-size: 2.5rem;
+font-family: "Noto Serif SC", serif;
+
 @media (min-width:${xs}px) {
-  font-size: 2rem;
-}
-@media (min-width:${s}px) {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 @media (min-width:${m}px) {
   font-size: 3.25rem;
 }
 @media (min-width:${l}px) {
-  font-size: 4rem;
+  font-size: 4.5rem;
 }
 `
 export const H2 = styled.h2`
 font-size: 1.8rem;
 line-height: 2.4rem;
-font-family: "Prata", serif;
+font-family: "Noto Serif SC", serif;
 @media (min-width:${xs}px) {
   font-size: 2.2rem;
   line-height: 3rem;
@@ -101,7 +88,7 @@ font-family: "Prata", serif;
 `
 export const H3 = styled.h3`
 font-size: 1rem;
-font-family: "Lato", sans-serif
+font-family: "Lato", sans-serif;
 font-weight: 400;
 @media (min-width:${xs}px) {
   font-size: 1.05rem;
@@ -154,42 +141,42 @@ display:none;
 }
 `
 export const Logo = styled.img`
-width: 50px;
+width: 75px;
 @media (min-width:${xs}px) {
-  width:55px
+  width:80px
 }
 @media (min-width:${s}px) {
-  width:60px;
+  width:85px;
 }
 @media (min-width:${m}px) {
-  width:65px
+  width:90px
 }
 @media (min-width:${l}px) {
-  width:70px
+  width:100px
 }
 `
 export const Container = styled.div`
  width:100%;
  padding-right:45px;
  padding-left:45px;
- padding-bottom: 100px;
- padding-top:50px;
+ padding-top:25px;
+  padding-bottom:45px;
  margin-right:auto;
  margin-left:auto;
  @media (min-width:${xxs}px) {
-   max-width:370px;
+   max-width:350px;
  }
 @media (min-width:${xs}px) {
-  max-width:450px;
+  max-width:420px;
 }
 @media (min-width:${s}px) {
-  max-width:680px;
+  max-width:600px;
 }
 @media (min-width:${m}px) {
-  max-width:800px
+  max-width:780px
 }
 @media (min-width:${l}px) {
-  max-width:980px
+  max-width:950px
 }
 `
 export const NumberStyle = styled.div`
@@ -202,21 +189,25 @@ padding-left: 1.4rem;
 `
 
 export const RelDiv = styled.div`
-position: static
+position: static;
 padding: 0;
 @media (min-width:${s}px) {
 position: relative;
 width:100%;
+padding-bottom:50px;
 }
 `
 export const AbsoluteDiv= styled.div`
-
 padding: 0;
 @media (min-width:${s}px) {
   position: absolute;
   top:0;
   padding-left: 35%;
+  padding-top:20px;
   padding-right:25px;
+}
+@media (min-width:${l}px) {
+  padding-top:70px;
 }
 `
 export const Padded1 = styled.div`
@@ -232,12 +223,8 @@ padding-left:35px;
 padding-top:35px;
 `
 
-export const Bottom = styled(Top)`
-background-color:Black;
-padding-bottom:35px;
-${P}{
-  color:white;
-}
+export const Bottom = styled(Container)`
+padding-bottom:40px;
 `
 
 export const ColorDiv = styled.div`
@@ -301,30 +288,23 @@ export const rightAlign = css`
 
 export const StyledLink = styled(props => <Link {...props} />)`
 color:black;
-text-decoration:underline;
   ${props => props.addCSS}
   &:hover {
-    color:black;
+    color:red;
     }
 `
 export const ExtLink = styled.a`
-  color:white;
   display: inline;
   margin-right: 1em;
+  color:black;
   text-decoration:underline;
     ${props => props.addCSS}
     &:hover {
-      color:white;
+      color:red;
       }
 `
-export const Sketch01 = styled.div`
- float: left;
-    margin: 10px 10px 0 0;
-    width: 100%;
-    ${Sketch01}:canvas{
-      width: 100% !important;
-      height: auto !important;
- }
+export const Line = styled.hr `
+ border-top: 1px solid black;
+ padding-bottom:50px
 `
-
 ;

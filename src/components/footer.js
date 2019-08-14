@@ -1,13 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import {leftAlign, ExtLink, Bottom, P, FooterImage, StyledLink, H4} from "../style.js"
-import { Container, Row, Col} from "reactstrap"
+import {Container,leftAlign, ExtLink, Bottom, P, FooterImage, StyledLink, H4, Line} from "../style.js"
+import {Row, Col} from "reactstrap"
 
 
 const Footer = ({ siteFooter }) => (
   <Bottom>
-  <Container>
+  <Line></Line>
     <Row>
       <Col>
         <Row>
@@ -35,7 +35,6 @@ const Footer = ({ siteFooter }) => (
         </Row>
       </Col>
     </Row>
-</Container>
 </Bottom>
 
 )

@@ -8,6 +8,11 @@ import {Row, Col} from 'reactstrap'
 import Header from "../components/header.js"
 import {rightAlign, leftAlign, StyledLink, HiddenDiv, LayoutPanel, ProImage, PanelContent, MasonryLayout, IndentP, ListP, P, Padded1, Padded2,Container, MainImage, H1, H2, H3, H4} from "../style.js"
 import Fade from "react-reveal/Fade"
+var xxs = 420;
+var xs = 576;
+var s = 768;
+var m = 992;
+var l = 1400;
 
 class Project extends Component {
   render(){
@@ -43,7 +48,7 @@ class Project extends Component {
               ))}
             </Col>
             </HiddenDiv>
-            <Col m ={{ size: 8, offset: 1 }}>
+            <Col md ={{size: 8, offset: 1}}>
             <Padded1>
               <H2>{title}</H2>
             </Padded1>
