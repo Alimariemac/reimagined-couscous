@@ -14,10 +14,10 @@ import Fade from "react-reveal/Fade"
 const Project = ({node})=>{
   return(
     <Col md="4" className = "mb-3">
-           <NumberStyle><H3>{node.order}. </H3></NumberStyle>
+           <NumberStyle><H3>{node.order}.</H3></NumberStyle>
            <ProjectBlock>
               <H3>{node.title}</H3>
-              <P>{node.companyName} <br/> <StyledLink to={node.slug}>see more</StyledLink></P>
+              <P>{node.companyName}<br/><StyledLink to={node.slug} addCSS = {leftAlign}>see more</StyledLink></P>
             </ProjectBlock>
     </Col>
   )
@@ -34,11 +34,9 @@ const IndexPage = ({data}) => (
             </Padded2>
               <AbsoluteDiv>
               <Padded1>
-              <Fade bottom>
                   <H1>Hello. Bonjour.
                   <br></br>
                   こんにちわ.</H1>
-                  </Fade>
                   </Padded1>
                   <Padded2>
                   <P>Stilton cheddar cream cheese. Feta squirty cheese mascarpone st. agur blue cheese who moved my cheese everyone loves cow dolcelatte. Stinking bishop blue castello parmesan port-salut edam rubber cheese airedale stinking bishop.</P>

@@ -288,6 +288,7 @@ border-radius: 10px;
 export const leftAlign = css`
    float:left;
    transition: padding-left 0.5s;
+   padding-bottom:10px;
    &:hover {
      color:black;
      padding-left: 10px;

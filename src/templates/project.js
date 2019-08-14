@@ -31,11 +31,11 @@ class Project extends Component {
           <Row>
           <HiddenDiv>
             <Col xs = "2">
-              <H3 >Year</H3>
+              <H4>Year</H4>
               <IndentP>{year}</IndentP>
-              <H3>Client</H3>
+              <H4>Client</H4>
               <IndentP>{companyName}</IndentP>
-              <H3>Deliverables</H3>
+              <H4>Deliverables</H4>
               {deliverables.map(d => (
                 <ListP>
                 {d}
@@ -90,8 +90,8 @@ class Project extends Component {
           </Row>
           <Row>
             <Col>
-          <StyledLink to = {previous.slug} addCSS = {leftAlign}><P> Previous</P></StyledLink>
-          <StyledLink to = {next.slug} addCSS = {rightAlign}><P> Next</P></StyledLink>
+          <StyledLink to = {previous.slug} addCSS = {leftAlign}><H4> Previous</H4></StyledLink>
+          <StyledLink to = {next.slug} addCSS = {rightAlign}><H4> Next</H4></StyledLink>
             </Col>
           </Row>
       </Container>
