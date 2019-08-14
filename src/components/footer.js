@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import {ExtLink, Bottom, P, FooterImage, StyledLink, H4} from "../style.js"
-import shapeImage from "../images/Shape.png"
 import { Container, Row, Col} from "reactstrap"
 
 
