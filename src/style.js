@@ -291,10 +291,11 @@ export const leftAlign = css`
 
 export const rightAlign = css`
    float:right;
+   padding-right: 10px;
    transition: padding-right 0.5s;
    &:hover {
      color:black;
-     padding-right: 10px;
+     padding-right: 0px;
      }
 `
 
