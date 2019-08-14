@@ -1,99 +1,76 @@
 import React from "react"
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from "../components/header.js"
-import { Link } from "gatsby"
+import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import mainImage from "../images/baugasm2.png"
-import styled from 'styled-components'
-import { Container, Row, Col } from 'reactstrap'
-
-const StyledLink = styled(props => <Link {...props} />)`
-text-decoration: underline;
-`
-const ProjectPara = styled.p`
-font-size: 1.3rem ;
-`
-const LinkHeading = styled.h4`
-line-height: 2rem;
-`
-const NumberStyle = styled.div`
-position: absolute;
-top:0;
-font-size:1.3rem;
-`
-const ProjectBlock = styled.div`
-padding-left: 1.4rem;
-`
-const ResImage = styled.img`
-margin-top: 10px;
-width: 100%;
-height:auto;
-`;
-
-const MarginContainer = styled.div`
-margin-bottom: 2rem;
-`
+import mainImage from "../images/baugasm3.png"
+import styled from "styled-components"
+import { Row, Col} from "reactstrap"
+import { Link } from "gatsby"
+import {leftAlign, StyledLink, ProjectBlock, NumberStyle, MasonryLayout, LayoutPanel, PanelContent, ColorDiv, PlaceholderDiv2, PlaceholderDiv, P, Padded1, Padded2, Container, MainImage, H1, H2, H3, H4, RelDiv, AbsoluteDiv} from "../style.js"
+import Fade from "react-reveal/Fade"
 
 const Project = ({node})=>{
   return(
     <Col md="4" className = "mb-3">
-           <NumberStyle><h4>{node.order}. </h4></NumberStyle>
+           <NumberStyle><H3>{node.order}. </H3></NumberStyle>
            <ProjectBlock>
-              <h4>{node.title}</h4>
-              <p>{node.companyName} <br/> <StyledLink to={node.slug}>see more</StyledLink></p>
+              <H3>{node.title}</H3>
+              <P>{node.companyName} <br/> <StyledLink to={node.slug}>see more</StyledLink></P>
             </ProjectBlock>
     </Col>
   )
 }
 
-
 const IndexPage = ({data}) => (
   <Layout>
-  <Header>
-  </Header>
-  <Container>
-        <Row className= "mt-3">
-          <Col lg="6" className = "mb-3">
-          <ResImage src = {mainImage}></ResImage>
-          </Col>
-          <Col lg="6">
+      <Container>
+        <RelDiv>
+        <Row>
+        <Col>
+         <Padded2>
+            <MainImage src = {mainImage}></MainImage>
+            </Padded2>
+              <AbsoluteDiv>
+              <Padded1>
+              <Fade bottom>
+                  <H1>Hello. Bonjour.
+                  <br></br>
+                  こんにちわ.</H1>
+                  </Fade>
+                  </Padded1>
+                  <Padded2>
+                  <P>Stilton cheddar cream cheese. Feta squirty cheese mascarpone st. agur blue cheese who moved my cheese everyone loves cow dolcelatte. Stinking bishop blue castello parmesan port-salut edam rubber cheese airedale stinking bishop.</P>
+                  </Padded2>
+              </AbsoluteDiv>
+              </Col>
+              </Row>
+          </RelDiv>
           <Row>
-            <Col>
-            <p>Stilton cheddar cream cheese. Feta squirty cheese mascarpone st. agur
-            blue cheese who moved my cheese everyone loves cow dolcelatte. Stinking bishop
-            blue castello parmesan port-salut edam rubber cheese airedale stinking bishop.
-            </p>
-            </Col>
+              <Col>
+              <Padded2>
+                  <H2>
+                  Projects.
+                  </H2>
+              </Padded2>
+              </Col>
           </Row>
           <Row>
-          <Col>
-          <LinkHeading><StyledLink to = "#projectSection">Select Projects</StyledLink></LinkHeading>
-          <LinkHeading><StyledLink to="digital">Digital Explorations</StyledLink></LinkHeading>
-          <LinkHeading><StyledLink to="analogue">Analogue Explorations</StyledLink></LinkHeading>
-          </Col>
+    <Col>
+      <Row id = "projectSection">
+          {data.allContentfulProject.edges.map((edge) => <Project node= {edge.node} />)}
         </Row>
-      </Col>
-      </Row>
-      <Row className = "mt-5">
-      <Col>
-        <Row className = "mb-3">
-            <Col>
-              <h2>Projects</h2>
-            </Col>
-          </Row>
-        <Row id = "projectSection">
-            {data.allContentfulProject.edges.map((edge) => <Project node= {edge.node} />)}
-          </Row>
-          </Col>
-    </Row>
-  </Container>
+        </Col>
+  </Row>
+      </Container>
   </Layout>
 )
-
+//{data.allContentfulProject.edges.reverse().map((edge) => <Project node= {edge.node} />)}
 export default IndexPage;
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulProject (filter: {
+    allContentfulProject (sort: {order: ASC, fields: order},filter: {
       node_locale: {eq: "en-US"}
     }) {
       edges{
@@ -102,6 +79,12 @@ export const pageQuery = graphql`
           slug
           order
           companyName
+          image{
+            description
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+          }
         }
       }
     }
