@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Slogo from "../images/Logo.svg"
+import Slogo from "../images/myBlob(13).svg"
 import {Top, Logo} from "../style.js"
 
 

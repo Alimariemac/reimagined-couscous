@@ -29,13 +29,12 @@ class Project extends Component {
     } = this.props.data.contentfulProject
     return (
       <Layout>
-      <Container>
       <Padded2>
       <Row>
         <Col>
           <Row>
+          <Col md={{ size: 2}}>
           <HiddenDiv>
-            <Col xs = "2">
               <H4>Year</H4>
               <IndentP>{year}</IndentP>
               <H4>Client</H4>
@@ -46,9 +45,9 @@ class Project extends Component {
                 {d}
                 </ListP>
               ))}
-            </Col>
             </HiddenDiv>
-            <Col md ={{size: 8, offset: 1}}>
+          </Col>
+            <Col md={{ size: 9, offset:1}}>
             <Padded1>
               <H2>{title}</H2>
             </Padded1>
@@ -76,7 +75,7 @@ class Project extends Component {
   <LayoutPanel>
   <PanelContent>
   <Fade bottom>
-  <H3>{extraContent}</H3>
+  <P>{extraContent}</P>
   </Fade>
   </PanelContent>
   </LayoutPanel>
@@ -95,11 +94,10 @@ class Project extends Component {
           </Row>
           <Row>
             <Col>
-          <StyledLink to = {previous.slug} addCSS = {leftAlign}><H4> Previous</H4></StyledLink>
-          <StyledLink to = {next.slug} addCSS = {rightAlign}><H4> Next</H4></StyledLink>
+          <H4> <StyledLink to = {previous.slug} addcss = {leftAlign}>Previous</StyledLink></H4>
+          <H4><StyledLink to = {next.slug} addcss = {rightAlign}>Next</StyledLink></H4>
             </Col>
           </Row>
-      </Container>
       </Layout>
     )
   }

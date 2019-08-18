@@ -3,40 +3,53 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import React from "react"
 import { css } from 'styled-components'
-import { fadeInUp, slideOutRight } from 'react-animations';
+import {Col} from 'reactstrap'
 
-var xxs = 420;
+var xxs = 370;
 var xs = 576;
 var s = 768;
 var m = 992;
 var l = 1400;
-
-const fadeInAnimation = keyframes`${fadeInUp}`;
-const slideOutAnimation = keyframes`${slideOutRight}`;
-
-export const FadeDiv = styled.div`
-  animation: 1s ${fadeInAnimation};
-`;
 
 export const Body = styled.div`
 @import url("https://fonts.googleapis.com/css?family=Lato:300,700,Noto+Serif+SC:900&display=swap");
   background-color: #FFFFFF;
   color:#000000;
 `
+
 export const P = styled.p`
-font-size: 1rem;
+font-size: 0.9rem;
 font-weight: 300;
+margin-bottom:0;
 font-family: "Lato", sans-serif;
 @media (min-width:${xs}px) {
   font-size: 0.9rem;
 }
-@media (min-width:${m}px) {
+@media (min-width:${s}px) {
+  font-size: 1rem;
+}
+@media (min-width:${l}px) {
+  font-size: 1.2rem;
+}
+`
+export const FooterP = styled.p`
+font-size: 0.7rem;
+font-weight: 300;
+margin-bottom:0;
+font-family: "Lato", sans-serif;
+@media (min-width:${xs}px) {
+  font-size: 0.8rem;
+}
+@media (min-width:${s}px) {
+  font-size: 0.9rem;
+}
+@media (min-width:${l}px) {
   font-size: 1rem;
 }
 `
+
 export const IndentP = styled(P)`
 margin-left: 15px;
-
 `
 export const ListP= styled(IndentP)`
 font-size: 0.75rem;
@@ -47,16 +60,12 @@ font-size: 0.75rem;
   font-size: 0.9rem;
 }
 `
-export const LinkP= styled(P)`
-padding:0px;
-margin-bottom:0;
-`
 export const H1 = styled.h1`
 font-size: 2.5rem;
 font-family: "Noto Serif SC", serif;
 
 @media (min-width:${xs}px) {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 @media (min-width:${m}px) {
   font-size: 3.25rem;
@@ -91,7 +100,7 @@ font-size: 1rem;
 font-family: "Lato", sans-serif;
 font-weight: 400;
 @media (min-width:${xs}px) {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 @media (min-width:${s}px) {
   font-size: 1.1rem;
@@ -104,20 +113,21 @@ font-weight: 400;
 }
 `
 export const H4 = styled.h4`
-font-size: 1rem;
+font-size: .9rem;
 font-family: "Lato", sans-serif
 font-weight: 400;
+margin-top: 10px;
 @media (min-width:${xs}px) {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 @media (min-width:${s}px) {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 @media (min-width:${m}px) {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 @media (min-width:${l}px) {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 `
 
@@ -141,26 +151,26 @@ display:none;
 }
 `
 export const Logo = styled.img`
-width: 75px;
+width: 70px;
 @media (min-width:${xs}px) {
-  width:80px
+  width:75px
 }
 @media (min-width:${s}px) {
-  width:85px;
+  width:80px;
 }
 @media (min-width:${m}px) {
-  width:90px
+  width:85px
 }
 @media (min-width:${l}px) {
-  width:100px
+  width:90px
 }
 `
 export const Container = styled.div`
  width:100%;
  padding-right:45px;
  padding-left:45px;
- padding-top:25px;
-  padding-bottom:45px;
+ padding-top:55px;
+ padding-bottom:55px;
  margin-right:auto;
  margin-left:auto;
  @media (min-width:${xxs}px) {
@@ -171,6 +181,7 @@ export const Container = styled.div`
 }
 @media (min-width:${s}px) {
   max-width:600px;
+  padding-top:75px;
 }
 @media (min-width:${m}px) {
   max-width:780px
@@ -181,6 +192,7 @@ export const Container = styled.div`
 `
 export const NumberStyle = styled.div`
 position: absolute;
+min-height:100px;
 top:0;
 font-size:1.3rem;
 `
@@ -189,42 +201,109 @@ padding-left: 1.4rem;
 `
 
 export const RelDiv = styled.div`
-position: static;
-padding: 0;
-@media (min-width:${s}px) {
 position: relative;
-width:100%;
-padding-bottom:50px;
+padding: 0;
+min-height:480px;
+@media (min-width:${xxs}px) {
+  min-height:500px;
+}
+@media (min-width:${xs}px) {
+min-height:540px;
+}
+@media (min-width:${s}px) {
+min-height:400px;
+}
+@media (min-width:${m}px) {
+  min-height:480px;
+}
+@media (min-width:${l}px) {
+    min-height:600px;
+}
+`
+export const MovingDiv = styled.div`
+/*padding-top:200px;*/
+@media (min-width:${xxs}px) {
+  /*padding-top:210px;*/
+}
+@media (min-width:${xs}px) {
+  /*padding-top:170px;*/
+}
+@media (min-width:${s}px) {
+  /*padding-top:80px;*/
+}
+@media (min-width:${m}px) {
+  /*padding-top:60px;*/
+}
+@media (min-width:${l}px) {
+  /*padding-top:100px;*/
 }
 `
 export const AbsoluteDiv= styled.div`
 padding: 0;
+position: absolute;
+top:140px;
+@media (min-width:${xxs}px) {
+  top:160px;
+}
+@media (min-width:${xs}px) {
+  top:220px;
+}
 @media (min-width:${s}px) {
-  position: absolute;
   top:0;
-  padding-left: 35%;
-  padding-top:20px;
+  padding-left: 25%;
+  padding-top:0px;
   padding-right:25px;
 }
-@media (min-width:${l}px) {
-  padding-top:70px;
+@media (min-width:${m}px) {
+  padding-top:10px;
 }
 `
 export const Padded1 = styled.div`
-margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
+@media (min-width:${xxs}px) {
+  margin-bottom: 1.4rem;
+}
+@media (min-width:${xs}px) {
+  margin-bottom: 1.5rem;
+}
+@media (min-width:${s}px) {
+  margin-bottom: 1.6rem;
+}
+@media (min-width:${m}px) {
+  margin-bottom: 1.7rem;
+}
+@media (min-width:${l}px) {
+  margin-bottom: 1.8rem;
+}
 `
 export const Padded2 = styled.div`
-margin-bottom: 3rem;
+  margin-bottom: 1.8rem;
+@media (min-width:${xxs}px) {
+  margin-bottom: 2rem;
+}
+@media (min-width:${xs}px) {
+  margin-bottom: 2.2rem;
+}
+@media (min-width:${s}px) {
+  margin-bottom: 3.8rem;
+}
+@media (min-width:${m}px) {
+  margin-bottom: 4.2rem;
+}
+@media (min-width:${l}px) {
+  margin-bottom: 4.5rem;
+}
 `
 export const Top = styled.div`
 width:100%;
-padding-right:35px;
-padding-left:35px;
-padding-top:35px;
+padding-right:5%;
+padding-left:5%;
+padding-top:50px;
 `
 
 export const Bottom = styled(Container)`
 padding-bottom:40px;
+padding-top:0px;
 `
 
 export const ColorDiv = styled.div`
@@ -235,7 +314,7 @@ height:auto;
 
 export const HiddenDiv = styled.div`
 display:none;
-@media (min-width:${m}px) {
+@media (min-width:${s}px) {
   display:block;
 }
 `
@@ -268,43 +347,37 @@ border-radius: 10px;
 
 export const leftAlign = css`
    float:left;
-   transition: padding-left 0.5s;
-   padding-bottom:10px;
-   &:hover {
-     color:black;
-     padding-left: 10px;
-     }
 `
 
 export const rightAlign = css`
    float:right;
-   padding-right: 10px;
-   transition: padding-right 0.5s;
-   &:hover {
-     color:black;
-     padding-right: 0px;
-     }
 `
 
 export const StyledLink = styled(props => <Link {...props} />)`
-color:black;
-  ${props => props.addCSS}
+  color:black;
+  text-decoration: underline;
+  font-family: "Lato", sans-serif;
+  font-weight:400;
+  ${props => props.addcss}
   &:hover {
-    color:red;
+    color:black;
+    text-decoration: none;
     }
 `
 export const ExtLink = styled.a`
-  display: inline;
-  margin-right: 1em;
+color:black;
+font-weight:400;
+margin-bottom:10px;
+text-decoration: underline;
+font-family: "Lato", sans-serif;
+${props => props.addcss}
+&:hover {
   color:black;
-  text-decoration:underline;
-    ${props => props.addCSS}
-    &:hover {
-      color:red;
-      }
+  text-decoration: none;
+  }
 `
 export const Line = styled.hr `
  border-top: 1px solid black;
- padding-bottom:50px
+ padding-bottom:30px
 `
 ;

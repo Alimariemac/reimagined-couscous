@@ -12,8 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import styled from 'styled-components'
 import Header from "./header"
 import Footer from "./footer"
-import {Body} from "../style.js"
-
+import {Body, Container} from "../style.js"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -31,7 +30,9 @@ const Layout = ({ children }) => {
     <div>
         <Header>
         </Header>
+        <Container>
             <main>{children}</main>
+          </Container>
         <Footer>
         </Footer>
       </div>
