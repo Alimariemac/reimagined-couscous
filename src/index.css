@@ -1,0 +1,74 @@
+canvas#defaultCanvas0{
+  width: 120% !important;
+  height:auto !important;
+  position:fixed;
+  z-index:-1;
+  left:-35%;
+  top:-20%;
+float:left;
+}
+
+canvas#defaultCanvas1{
+  width: 120% !important;
+  height:auto !important;
+  right:-35%;
+  bottom:-20%;
+  position:fixed;
+    z-index:-2;
+    float:right;
+}
+
+canvas#defaultCanvas2{
+  width: 80% !important;
+  height:auto !important;
+  right:0;
+  bottom:0;
+  float:right;
+  position:fixed;
+  margin-left:100px;
+    z-index:-3
+}
+
+@media all and (min-width: 370px) {
+  canvas#defaultCanvas0,canvas#defaultCanvas1{
+    width: 100% !important;
+    height:auto !important;
+}
+canvas#defaultCanvas0{
+  left:-25%;
+  top:-20%;
+}
+}
+
+@media all and (min-width: 576px) {
+  canvas#defaultCanvas0,canvas#defaultCanvas1{
+    width: 80% !important;
+    height:auto !important;
+  }
+}
+
+@media all and (min-width: 768px) {
+  canvas#defaultCanvas0,canvas#defaultCanvas1{
+    width: 75% !important;
+    height:auto !important;
+  }
+  canvas#defaultCanvas0{
+    left:-25%;
+    top:-30%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  canvas#defaultCanvas0,canvas#defaultCanvas1{
+    width: 70% !important;
+    height:auto !important;
+  }
+  canvas#defaultCanvas0{
+    left:-30%;
+    top:-45%;
+  }
+  canvas#defaultCanvas1{
+    right:-30%;
+    bottom:-45%;
+  }
+}

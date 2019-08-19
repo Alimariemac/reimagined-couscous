@@ -13,7 +13,7 @@ var l = 1400;
 
 export const Body = styled.div`
 @import url("https://fonts.googleapis.com/css?family=Lato:300,700,Noto+Serif+SC:900&display=swap");
-  background-color: #FFFFFF;
+
   color:#000000;
 `
 
@@ -61,7 +61,7 @@ font-size: 0.75rem;
 }
 `
 export const H1 = styled.h1`
-font-size: 2.5rem;
+font-size: 2.2rem;
 font-family: "Noto Serif SC", serif;
 
 @media (min-width:${xs}px) {
@@ -167,9 +167,9 @@ width: 70px;
 `
 export const Container = styled.div`
  width:100%;
+ padding-top:140px;
  padding-right:45px;
  padding-left:45px;
- padding-top:55px;
  padding-bottom:55px;
  margin-right:auto;
  margin-left:auto;
@@ -220,42 +220,55 @@ min-height:400px;
     min-height:600px;
 }
 `
-export const MovingDiv = styled.div`
-/*padding-top:200px;*/
+export const AbsoluteDiv= styled.div`
+width: 100%;
+position: absolute;
+left: 0;
+top:0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+overflow:hidden;
+`
+export const RelDiv1 = styled.div`
+position: relative;
+padding: 0;
+min-height:390px;
 @media (min-width:${xxs}px) {
-  /*padding-top:210px;*/
+  min-height:400px;
 }
 @media (min-width:${xs}px) {
-  /*padding-top:170px;*/
+min-height:440px;
 }
 @media (min-width:${s}px) {
-  /*padding-top:80px;*/
+min-height:480px;
 }
 @media (min-width:${m}px) {
-  /*padding-top:60px;*/
+  min-height:440px;
 }
 @media (min-width:${l}px) {
-  /*padding-top:100px;*/
+    min-height:600px;
 }
 `
-export const AbsoluteDiv= styled.div`
+
+export const AbsoluteDiv1= styled.div`
 padding: 0;
 position: absolute;
-top:140px;
 @media (min-width:${xxs}px) {
-  top:160px;
+  top:60px;
 }
 @media (min-width:${xs}px) {
-  top:220px;
+  top:100px;
 }
 @media (min-width:${s}px) {
-  top:0;
+  top:110px;
   padding-left: 25%;
   padding-top:0px;
   padding-right:25px;
 }
 @media (min-width:${m}px) {
   padding-top:10px;
+  top:20%;
 }
 `
 export const Padded1 = styled.div`
@@ -355,24 +368,35 @@ export const rightAlign = css`
 
 export const StyledLink = styled(props => <Link {...props} />)`
   color:black;
-  text-decoration: underline;
   font-family: "Lato", sans-serif;
   font-weight:400;
+  background: linear-gradient( to bottom, #fff 0%, #FFEBEA 100% );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 10px;
+  text-decoration: none;
+  transition: background-size .2s;
   ${props => props.addcss}
   &:hover {
     color:black;
+    background-size: 4px 50px;
     text-decoration: none;
     }
 `
 export const ExtLink = styled.a`
 color:black;
-font-weight:400;
-margin-bottom:10px;
-text-decoration: underline;
 font-family: "Lato", sans-serif;
+font-weight:400;
+background: linear-gradient( to bottom, #fff 0%, #FFEBEA 100% );
+background-position: 0 100%;
+background-repeat: repeat-x;
+background-size: 4px 10px;
+text-decoration: none;
+transition: background-size .2s;
 ${props => props.addcss}
 &:hover {
   color:black;
+  background-size: 4px 50px;
   text-decoration: none;
   }
 `
